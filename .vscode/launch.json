@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:server}",
+            "name": "Debug server",
+            "program": "${workspaceFolder:server}/.build/debug/server",
+            "preLaunchTask": "swift: Build Debug server"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:server}",
+            "name": "Release server",
+            "program": "${workspaceFolder:server}/.build/release/server",
+            "preLaunchTask": "swift: Build Release server"
+        }
+    ]
+}
