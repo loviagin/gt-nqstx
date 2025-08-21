@@ -13,6 +13,6 @@ func routes(_ app: Application) throws {
     }
     
     app.get("donate") { req async throws -> DonateDTO in
-        return DonateDTO(allowed: true)
+        return DonateDTO(allowed: false)
     }
 }
