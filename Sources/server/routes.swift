@@ -11,4 +11,8 @@ func routes(_ app: Application) throws {
         let dto = try req.content.decode(GenerateImageDTO.self)
         return try await ImagenService.generate(req, prompt: dto.prompt)
     }
+    
+    app.get("donate") { req async throws -> DonateDTO in
+        return DonateDTO(allowed: false)
+    }
 }
