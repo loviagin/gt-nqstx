@@ -17,6 +17,11 @@ public func configure(_ app: Application) async throws {
 //        tls: .prefer(try .init(configuration: .clientDefault)))
 //    ), as: .psql)
 
+    app.http.client.configuration.timeout = .init(
+        connect: .seconds(15),
+        read: .seconds(240)   // сколько ждём ответа от Gemini
+    )
+    
     try await app.autoRevert()
 
     // register routes
