@@ -6,4 +6,9 @@ func routes(_ app: Application) throws {
         let dto = try req.content.decode(GenerateDTO.self)
         return try await GeminiService.generate(req, prompt: dto.prompt)
     }
+    
+    app.post("imagen") { req async throws -> String in
+        let dto = try req.content.decode(GenerateImageDTO.self)
+        return try await ImagenService.generate(req, prompt: dto.prompt)
+    }
 }
